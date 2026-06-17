@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="fi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Arjenhallinnan digituotteet | Tuotannon työkalut</title>
+  <meta name="description" content="Käytännönläheisiä digitaalisia työkaluja työnjohtajille, vuorovastaaville ja tiiminvetäjille.">
+  <link rel="stylesheet" href="tyyli.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav container">
+      <a class="brand" href="#alku" aria-label="Arjenhallinnan digituotteet">
+        <img src="assets/logo.svg" alt="" class="logo">
+        <span>Arjenhallinnan digituotteet</span>
+      </a>
+      <div class="nav-links">
+        <a href="#tuotteet">Tuotteet</a>
+        <a href="#hyodyt">Hyödyt</a>
+        <a href="#ohjeet">Näin ostat</a>
+        <a class="nav-cta" href="#tuotteet">Katso tuote</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="alku">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Digitaaliset työkalut tuotannon arkeen</p>
+          <h1>Selkeytä vuoron johtamista, poikkeamien seurantaa ja päivittäistä tekemistä.</h1>
+          <p class="lead">
+            Käytännönläheisiä PDF- ja Canva-pohjia työnjohtajille, vuorovastaaville,
+            tiiminvetäjille ja tuotannon kehittäjille.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#tuotteet">Tutustu tuotteeseen</a>
+            <a class="button secondary" href="#ohjeet">Miten toimitus toimii?</a>
+          </div>
+          <p class="microcopy">Digitaalinen tuote. Ei fyysistä toimitusta.</p>
+        </div>
+        <div class="hero-card" aria-label="Tuotekuva">
+          <img src="assets/tuote-tuotannon-arjenhallinta.svg" alt="Tuotannon arjenhallintapaketti -tuotteen esikatselukuva">
+        </div>
+      </div>
+    </section>
+
+    <section id="tuotteet" class="section">
+      <div class="container">
+        <div class="section-title">
+          <p class="eyebrow">Ensimmäinen tuote</p>
+          <h2>Tuotannon arjenhallintapaketti</h2>
+          <p>
+            Tulostettava ja digitaalisesti käytettävä planneri tuotannon päivittäisjohtamiseen.
+            Sopii esimerkiksi vuoron aloitukseen, päivän seurantaan, turvallisuushavaintoihin,
+            poikkeamiin ja kehitystoimenpiteisiin.
+          </p>
+        </div>
+
+        <article class="product-card">
+          <div class="product-image">
+            <img src="assets/tuote-tuotannon-arjenhallinta.svg" alt="Tuotannon arjenhallintapaketti">
+          </div>
+          <div class="product-content">
+            <p class="tag">PDF + Canva-muokattava pohja</p>
+            <h3>Tuotannon arjenhallintapaketti</h3>
+            <p>
+              20-sivuinen A4-paketti tuotannon arjen selkeyttämiseen. Tuote auttaa
+              kokoamaan tavoitteet, resurssit, poikkeamat ja kehitysideat yhteen paikkaan.
+            </p>
+
+            <ul class="check-list">
+              <li>Päivän ja viikon suunnittelupohjat</li>
+              <li>Poikkeamien ja juurisyiden seuranta</li>
+              <li>Turvallisuushavaintojen kirjaaminen</li>
+              <li>Kehitystoimenpiteiden priorisointi</li>
+              <li>Canva-muokattava versio omaan brändiin</li>
+            </ul>
+
+            <div class="price-row">
+              <div>
+                <span class="price">8,90 €</span>
+                <span class="price-note">julkaisuhinta</span>
+              </div>
+              <a class="button primary" href="LISAA_TAHAN_MYYNTILINKKI" target="_blank" rel="noopener">
+                Osta tuote
+              </a>
+            </div>
+
+            <p class="small-note">
+              Vaihda yllä oleva Osta tuote -linkki omaan Payhip-, Gumroad-, Etsy- tai Holvi-linkkiisi.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="hyodyt" class="section alt">
+      <div class="container">
+        <div class="section-title">
+          <p class="eyebrow">Miksi tämä toimii?</p>
+          <h2>Tuote ratkaisee selkeän arjen ongelman</h2>
+        </div>
+
+        <div class="benefit-grid">
+          <div class="benefit">
+            <h3>Vähemmän hajanaista tietoa</h3>
+            <p>Vuoron tärkeät asiat eivät jää yksittäisten viestien, muistilappujen tai keskustelujen varaan.</p>
+          </div>
+          <div class="benefit">
+            <h3>Nopeampi tilannekuva</h3>
+            <p>Tavoitteet, poikkeamat, henkilöstötilanne ja kehityskohteet näkyvät yhdellä silmäyksellä.</p>
+          </div>
+          <div class="benefit">
+            <h3>Helppo ottaa käyttöön</h3>
+            <p>Tuotetta voi käyttää tulostettuna, PDF:nä tai muokata Canvassa oman yrityksen näköiseksi.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="ohjeet" class="section">
+      <div class="container narrow">
+        <div class="section-title">
+          <p class="eyebrow">Ostaminen ja toimitus</p>
+          <h2>Näin digitaalinen toimitus toimii</h2>
+        </div>
+
+        <div class="steps">
+          <div class="step">
+            <span>1</span>
+            <p>Valitse tuote ja siirry maksamaan turvallisen maksupalvelun kautta.</p>
+          </div>
+          <div class="step">
+            <span>2</span>
+            <p>Saat latauslinkin maksupalvelun kautta heti ostoksen jälkeen.</p>
+          </div>
+          <div class="step">
+            <span>3</span>
+            <p>Lataa PDF tai avaa Canva-mallilinkki ja tee tuotteesta oma kopiosi.</p>
+          </div>
+        </div>
+
+        <div class="notice">
+          <h3>Käyttölisenssi</h3>
+          <p>
+            Tuote on tarkoitettu ostajan henkilökohtaiseen käyttöön tai oman organisaation
+            sisäiseen käyttöön. Tuotteen jälleenmyynti, jakaminen eteenpäin tai muokkaamattoman
+            tuotteen uudelleenmyynti ei ole sallittua.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cta-section">
+      <div class="container cta-box">
+        <h2>Haluatko selkeyttää tuotannon arkea?</h2>
+        <p>Aloita ensimmäisestä digitaalisesta työkalusta ja rakenna oma arjenhallinnan pakettisi.</p>
+        <a class="button primary light" href="#tuotteet">Katso tuote</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <strong>Arjenhallinnan digituotteet</strong>
+        <p>Digitaalisia työkaluja tuotannon, työnjohdon ja tiimityön arkeen.</p>
+      </div>
+      <div>
+        <p><strong>Yhteys</strong></p>
+        <p>Lisää tähän oma sähköpostisi</p>
+      </div>
+      <div>
+        <p><strong>Yritystiedot</strong></p>
+        <p>Lisää tähän yrityksesi nimi / Y-tunnus tarvittaessa.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

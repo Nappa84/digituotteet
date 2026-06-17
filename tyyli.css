@@ -1,0 +1,51 @@
+DIGITUOTTEIDEN MYYNTISIVUSTO – JULKAISUOHJEET
+
+Tämä paketti sisältää valmiin yhden sivun myyntisivuston digitaalisille tuotteille.
+
+TIEDOSTOT
+- index.html = sivuston sisältö
+- tyyli.css = sivuston ulkoasu
+- assets/logo.svg = yksinkertainen logo
+- assets/tuote-tuotannon-arjenhallinta.svg = tuotteen esikatselukuva
+- MUOKKAA_TAMA_ENSIN.txt = kohdat, jotka sinun kannattaa vaihtaa ennen julkaisua
+
+TÄRKEÄÄ
+Älä laita varsinaista myytävää PDF-tuotetta suoraan julkiseen sivustokansioon.
+Jos laitat PDF:n GitHub Pagesiin tai Netlifyyn, kuka tahansa voi ladata sen ilman maksua.
+Käytä maksupalvelua, kuten Payhip, Gumroad, Etsy, Holvi tai Shopify, ja lisää sivulle ostolinkki.
+
+MITEN OTAT KÄYTTÖÖN
+1. Luo tuote Payhipissä, Gumroadissa, Etsyssä, Holvissa tai muussa maksupalvelussa.
+2. Lisää tuotteelle PDF-tiedosto ja Canva-template-linkki.
+3. Kopioi maksupalvelun ostolinkki.
+4. Avaa index.html tekstieditorilla.
+5. Etsi teksti: LISAA_TAHAN_MYYNTILINKKI
+6. Korvaa se omalla ostolinkilläsi.
+7. Päivitä hinta, sähköposti ja yritystiedot.
+8. Julkaise sivusto GitHub Pagesissa tai Netlifyssä.
+
+GITHUB PAGES -JULKAISU LYHYESTI
+1. Luo GitHubiin uusi repository, esimerkiksi digituotteet.
+2. Lataa kaikki tämän kansion tiedostot repositoryyn.
+3. Mene repositoryn Settings -> Pages.
+4. Valitse Branch: main ja folder: /root.
+5. Odota hetki, jolloin GitHub antaa sinulle julkisen sivulinkin.
+
+NETLIFY-JULKAISU LYHYESTI
+1. Mene Netlifyyn.
+2. Luo uusi sivusto.
+3. Vedä tämä koko kansio Netlifyn deploy-alueelle.
+4. Netlify antaa sinulle sivulinkin heti julkaisun jälkeen.
+
+MYYNTILINKKIVAIHTOEHDOT
+- Payhip: sopii hyvin digitaalisiin latauksiin.
+- Gumroad: helppo aloittaa digituotteilla.
+- Etsy: markkinapaikka, jossa on valmista ostajaliikennettä.
+- Holvi: suomalaiselle pienyrittäjälle tuttu vaihtoehto, mutta tarkista digituotteiden toimitusprosessi.
+- Shopify: hyvä myöhemmin, kun tuotteita on enemmän.
+
+SUOSITUS
+Aloita helpoiten näin:
+- Sivusto GitHub Pagesiin tai Netlifyyn.
+- Tuote Payhipiin.
+- Sivun Osta tuote -nappi ohjaa Payhipin kassalle.
