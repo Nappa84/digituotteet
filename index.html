@@ -3,51 +3,641 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Arjenhallinnan digituotteet | Tuotannon työkalut</title>
-  <meta name="description" content="Käytännönläheisiä digitaalisia työkaluja työnjohtajille, vuorovastaaville ja tiiminvetäjille.">
-  <link rel="stylesheet" href="tyyli.css">
+  <title>Arjenhallinnan digituotteet</title>
+  <meta name="description" content="Digitaalisia työkaluja tuotannon, työnjohdon ja tiimityön arkeen.">
+  <style>
+    :root {
+      --dark: #14213d;
+      --blue: #2563eb;
+      --blue-dark: #1d4ed8;
+      --light-blue: #eaf2ff;
+      --bg: #f4f7fb;
+      --white: #ffffff;
+      --text: #1f2937;
+      --muted: #64748b;
+      --line: #dbe4ee;
+      --green: #0f766e;
+      --orange-bg: #fff7ed;
+      --orange-line: #fed7aa;
+      --shadow: 0 22px 55px rgba(20, 33, 61, 0.13);
+      --radius: 24px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .container {
+      width: min(1120px, calc(100% - 36px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      background: rgba(255, 255, 255, 0.94);
+      border-bottom: 1px solid var(--line);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(10px);
+    }
+
+    .nav {
+      min-height: 72px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 22px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      color: var(--dark);
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 13px;
+      background: linear-gradient(135deg, var(--dark), var(--blue));
+      display: grid;
+      place-items: center;
+      color: white;
+      font-weight: 900;
+      font-size: 22px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      font-weight: 700;
+      font-size: 15px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--muted);
+    }
+
+    .nav-links a:hover {
+      color: var(--dark);
+    }
+
+    .nav-button {
+      background: var(--dark);
+      color: white !important;
+      padding: 10px 16px;
+      border-radius: 999px;
+    }
+
+    .hero {
+      padding: 82px 0 72px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      color: var(--blue);
+      font-size: 13px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin: 0 0 14px;
+    }
+
+    h1, h2, h3 {
+      color: var(--dark);
+      line-height: 1.08;
+      letter-spacing: -0.04em;
+      margin-top: 0;
+    }
+
+    h1 {
+      font-size: clamp(42px, 6vw, 68px);
+      margin-bottom: 22px;
+    }
+
+    h2 {
+      font-size: clamp(32px, 4vw, 48px);
+      margin-bottom: 16px;
+    }
+
+    h3 {
+      font-size: 24px;
+      margin-bottom: 12px;
+    }
+
+    .lead {
+      color: var(--muted);
+      font-size: 20px;
+      max-width: 650px;
+      margin-bottom: 30px;
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 15px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+      padding: 13px 22px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 900;
+      transition: 0.15s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .btn-primary {
+      background: var(--blue);
+      color: white;
+      box-shadow: 0 12px 28px rgba(37, 99, 235, 0.25);
+    }
+
+    .btn-primary:hover {
+      background: var(--blue-dark);
+    }
+
+    .btn-secondary {
+      background: white;
+      color: var(--dark);
+      border: 1px solid var(--line);
+    }
+
+    .micro {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .mockup-wrap {
+      background: linear-gradient(135deg, #ffffff, #dcecff);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 30px;
+    }
+
+    .mockup {
+      background: var(--light-blue);
+      border-radius: 26px;
+      padding: 34px;
+      min-height: 440px;
+      display: grid;
+      grid-template-columns: 1fr 0.7fr;
+      gap: 24px;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .document {
+      background: white;
+      border: 4px solid #c7d2fe;
+      border-radius: 22px;
+      padding: 28px;
+      min-height: 360px;
+      box-shadow: 0 14px 32px rgba(20, 33, 61, 0.09);
+    }
+
+    .doc-title-strip {
+      background: var(--dark);
+      color: white;
+      padding: 13px 18px;
+      border-radius: 13px;
+      display: inline-block;
+      font-weight: 900;
+      margin-bottom: 18px;
+    }
+
+    .doc-title {
+      color: var(--dark);
+      font-size: 37px;
+      line-height: 1.1;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      margin-bottom: 28px;
+    }
+
+    .line {
+      height: 18px;
+      background: #c7d2fe;
+      border-radius: 999px;
+      margin-bottom: 14px;
+    }
+
+    .line.light {
+      background: #dbeafe;
+    }
+
+    .line.short {
+      width: 72%;
+    }
+
+    .line.mid {
+      width: 88%;
+    }
+
+    .doc-box {
+      margin-top: 34px;
+      height: 74px;
+      border-radius: 14px;
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+    }
+
+    .bolt-box {
+      text-align: center;
+    }
+
+    .check {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: white;
+      border: 4px solid #bfdbfe;
+      display: grid;
+      place-items: center;
+      color: var(--green);
+      font-size: 42px;
+      font-weight: 900;
+      margin: 0 auto 16px;
+    }
+
+    .bolt {
+      width: 0;
+      height: 0;
+      border-left: 52px solid transparent;
+      border-right: 35px solid transparent;
+      border-top: 170px solid var(--blue);
+      transform: skewX(-15deg);
+      margin: 0 auto 26px;
+      position: relative;
+    }
+
+    .bolt:before {
+      content: "";
+      position: absolute;
+      left: -98px;
+      top: -170px;
+      width: 150px;
+      height: 110px;
+      background: var(--blue);
+      clip-path: polygon(25% 0, 100% 0, 70% 100%, 0 100%);
+    }
+
+    .mockup-caption {
+      color: #475569;
+      font-size: 20px;
+      font-weight: 900;
+      margin-top: 22px;
+    }
+
+    section {
+      padding: 78px 0;
+    }
+
+    .white-section {
+      background: white;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-head {
+      max-width: 760px;
+      margin-bottom: 36px;
+    }
+
+    .section-head p:not(.eyebrow) {
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .product-card {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      overflow: hidden;
+    }
+
+    .product-preview {
+      background: var(--light-blue);
+      padding: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .mini-preview {
+      width: 100%;
+      max-width: 360px;
+      background: white;
+      border-radius: 22px;
+      border: 3px solid #c7d2fe;
+      padding: 28px;
+      min-height: 420px;
+    }
+
+    .mini-preview .doc-title {
+      font-size: 31px;
+    }
+
+    .product-content {
+      padding: 40px;
+    }
+
+    .tag {
+      display: inline-flex;
+      margin-bottom: 14px;
+      padding: 7px 13px;
+      border-radius: 999px;
+      background: var(--light-blue);
+      color: var(--blue);
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .check-list {
+      padding: 0;
+      margin: 24px 0;
+      list-style: none;
+    }
+
+    .check-list li {
+      color: var(--muted);
+      margin-bottom: 11px;
+      padding-left: 30px;
+      position: relative;
+    }
+
+    .check-list li:before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--green);
+      font-weight: 900;
+    }
+
+    .price-row {
+      border-top: 1px solid var(--line);
+      margin-top: 26px;
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .price {
+      display: block;
+      font-size: 38px;
+      line-height: 1;
+      color: var(--dark);
+      font-weight: 900;
+      letter-spacing: -0.06em;
+    }
+
+    .price-note {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      background: var(--bg);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 26px;
+    }
+
+    .card p {
+      color: var(--muted);
+      margin-bottom: 0;
+    }
+
+    .steps {
+      display: grid;
+      gap: 16px;
+    }
+
+    .step {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 20px;
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+    }
+
+    .step-number {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--blue);
+      color: white;
+      font-weight: 900;
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
+    }
+
+    .step p {
+      margin: 4px 0 0;
+    }
+
+    .notice {
+      margin-top: 26px;
+      background: var(--orange-bg);
+      border: 1px solid var(--orange-line);
+      border-radius: 18px;
+      padding: 24px;
+    }
+
+    .notice p {
+      margin-bottom: 0;
+      color: #7c2d12;
+    }
+
+    .cta {
+      padding-top: 20px;
+    }
+
+    .cta-box {
+      background: linear-gradient(135deg, var(--dark), var(--blue));
+      color: white;
+      border-radius: var(--radius);
+      padding: 48px 28px;
+      text-align: center;
+    }
+
+    .cta-box h2 {
+      color: white;
+    }
+
+    .cta-box p {
+      color: rgba(255, 255, 255, 0.82);
+      font-size: 18px;
+    }
+
+    .cta-box .btn {
+      background: white;
+      color: var(--blue);
+      margin-top: 8px;
+    }
+
+    .footer {
+      background: var(--dark);
+      color: white;
+      padding: 40px 0;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr 1fr;
+      gap: 28px;
+    }
+
+    .footer p {
+      margin: 6px 0;
+      color: rgba(255, 255, 255, 0.72);
+    }
+
+    @media (max-width: 900px) {
+      .nav {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 16px 0;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .hero {
+        padding-top: 48px;
+      }
+
+      .hero-grid,
+      .mockup,
+      .product-card,
+      .cards,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .bolt-box {
+        display: none;
+      }
+
+      .price-row {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+  </style>
 </head>
 <body>
-  <header class="site-header">
-    <nav class="nav container">
+
+  <header class="topbar">
+    <div class="container nav">
       <a class="brand" href="#alku">
-        <img src="tuote-tuotannon-arjenhallinta.svg" alt="" class="logo">
+        <span class="brand-mark">A</span>
         <span>Arjenhallinnan digituotteet</span>
       </a>
-      <div class="nav-links">
+      <nav class="nav-links">
         <a href="#tuotteet">Tuotteet</a>
         <a href="#hyodyt">Hyödyt</a>
         <a href="#ohjeet">Näin ostat</a>
-        <a class="nav-cta" href="#tuotteet">Katso tuote</a>
-      </div>
-    </nav>
+        <a class="nav-button" href="#tuotteet">Katso tuote</a>
+      </nav>
+    </div>
   </header>
 
   <main id="alku">
     <section class="hero">
       <div class="container hero-grid">
-        <div class="hero-copy">
+        <div>
           <p class="eyebrow">Digitaaliset työkalut tuotannon arkeen</p>
           <h1>Selkeytä vuoron johtamista, poikkeamien seurantaa ja päivittäistä tekemistä.</h1>
           <p class="lead">
             Käytännönläheisiä PDF- ja Canva-pohjia työnjohtajille, vuorovastaaville,
             tiiminvetäjille ja tuotannon kehittäjille.
           </p>
-          <div class="hero-actions">
-            <a class="button primary" href="#tuotteet">Tutustu tuotteeseen</a>
-            <a class="button secondary" href="#ohjeet">Miten toimitus toimii?</a>
+          <div class="button-row">
+            <a class="btn btn-primary" href="#tuotteet">Tutustu tuotteeseen</a>
+            <a class="btn btn-secondary" href="#ohjeet">Miten toimitus toimii?</a>
           </div>
-          <p class="microcopy">Digitaalinen tuote. Ei fyysistä toimitusta.</p>
+          <p class="micro">Digitaalinen tuote. Ei fyysistä toimitusta.</p>
         </div>
-        <div class="hero-card">
-          <img src="assets/tuote-tuotannon-arjenhallinta.svg" alt="Tuotannon arjenhallintapaketti">
+
+        <div class="mockup-wrap">
+          <div class="mockup">
+            <div class="document">
+              <div class="doc-title-strip">TUOTANNON</div>
+              <div class="doc-title">Arjenhallinta-<br>paketti</div>
+              <div class="line light"></div>
+              <div class="line short"></div>
+              <div class="line mid"></div>
+              <div class="line short"></div>
+              <div class="doc-box"></div>
+            </div>
+            <div class="bolt-box">
+              <div class="check">✓</div>
+              <div class="bolt"></div>
+              <div class="mockup-caption">PDF + Canva-template</div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="tuotteet" class="section">
+    <section id="tuotteet">
       <div class="container">
-        <div class="section-title">
+        <div class="section-head">
           <p class="eyebrow">Ensimmäinen tuote</p>
           <h2>Tuotannon arjenhallintapaketti</h2>
           <p>
@@ -58,11 +648,20 @@
         </div>
 
         <article class="product-card">
-          <div class="product-image">
-            <img src="assets/tuote-tuotannon-arjenhallinta.svg" alt="Tuotannon arjenhallintapaketti">
+          <div class="product-preview">
+            <div class="mini-preview">
+              <div class="doc-title-strip">TUOTANNON</div>
+              <div class="doc-title">Arjenhallinta-<br>paketti</div>
+              <div class="line light"></div>
+              <div class="line short"></div>
+              <div class="line mid"></div>
+              <div class="line short"></div>
+              <div class="doc-box"></div>
+            </div>
           </div>
+
           <div class="product-content">
-            <p class="tag">PDF + Canva-muokattava pohja</p>
+            <span class="tag">PDF + Canva-muokattava pohja</span>
             <h3>Tuotannon arjenhallintapaketti</h3>
             <p>
               20-sivuinen A4-paketti tuotannon arjen selkeyttämiseen. Tuote auttaa
@@ -82,36 +681,36 @@
                 <span class="price">8,90 €</span>
                 <span class="price-note">julkaisuhinta</span>
               </div>
-              <a class="button primary" href="LISAA_TAHAN_MYYNTILINKKI" target="_blank" rel="noopener">
+              <a class="btn btn-primary" href="LISAA_TAHAN_MYYNTILINKKI" target="_blank" rel="noopener">
                 Osta tuote
               </a>
             </div>
 
-            <p class="small-note">
-              Vaihda yllä oleva Osta tuote -linkki omaan Payhip-, Gumroad-, Etsy- tai Holvi-linkkiisi.
+            <p class="micro">
+              Vaihda Osta tuote -painikkeeseen oma Payhip-, Gumroad-, Etsy- tai Holvi-linkkisi.
             </p>
           </div>
         </article>
       </div>
     </section>
 
-    <section id="hyodyt" class="section alt">
+    <section id="hyodyt" class="white-section">
       <div class="container">
-        <div class="section-title">
+        <div class="section-head">
           <p class="eyebrow">Miksi tämä toimii?</p>
           <h2>Tuote ratkaisee selkeän arjen ongelman</h2>
         </div>
 
-        <div class="benefit-grid">
-          <div class="benefit">
+        <div class="cards">
+          <div class="card">
             <h3>Vähemmän hajanaista tietoa</h3>
             <p>Vuoron tärkeät asiat eivät jää yksittäisten viestien, muistilappujen tai keskustelujen varaan.</p>
           </div>
-          <div class="benefit">
+          <div class="card">
             <h3>Nopeampi tilannekuva</h3>
             <p>Tavoitteet, poikkeamat, henkilöstötilanne ja kehityskohteet näkyvät yhdellä silmäyksellä.</p>
           </div>
-          <div class="benefit">
+          <div class="card">
             <h3>Helppo ottaa käyttöön</h3>
             <p>Tuotetta voi käyttää tulostettuna, PDF:nä tai muokata Canvassa oman yrityksen näköiseksi.</p>
           </div>
@@ -119,24 +718,24 @@
       </div>
     </section>
 
-    <section id="ohjeet" class="section">
-      <div class="container narrow">
-        <div class="section-title">
+    <section id="ohjeet">
+      <div class="container" style="max-width: 860px;">
+        <div class="section-head">
           <p class="eyebrow">Ostaminen ja toimitus</p>
           <h2>Näin digitaalinen toimitus toimii</h2>
         </div>
 
         <div class="steps">
           <div class="step">
-            <span>1</span>
+            <div class="step-number">1</div>
             <p>Valitse tuote ja siirry maksamaan turvallisen maksupalvelun kautta.</p>
           </div>
           <div class="step">
-            <span>2</span>
+            <div class="step-number">2</div>
             <p>Saat latauslinkin maksupalvelun kautta heti ostoksen jälkeen.</p>
           </div>
           <div class="step">
-            <span>3</span>
+            <div class="step-number">3</div>
             <p>Lataa PDF tai avaa Canva-mallilinkki ja tee tuotteesta oma kopiosi.</p>
           </div>
         </div>
@@ -152,11 +751,11 @@
       </div>
     </section>
 
-    <section class="section cta-section">
+    <section class="cta">
       <div class="container cta-box">
         <h2>Haluatko selkeyttää tuotannon arkea?</h2>
         <p>Aloita ensimmäisestä digitaalisesta työkalusta ja rakenna oma arjenhallinnan pakettisi.</p>
-        <a class="button primary light" href="#tuotteet">Katso tuote</a>
+        <a class="btn" href="#tuotteet">Katso tuote</a>
       </div>
     </section>
   </main>
@@ -168,14 +767,15 @@
         <p>Digitaalisia työkaluja tuotannon, työnjohdon ja tiimityön arkeen.</p>
       </div>
       <div>
-        <p><strong>Yhteys</strong></p>
+        <strong>Yhteys</strong>
         <p>Lisää tähän oma sähköpostisi</p>
       </div>
       <div>
-        <p><strong>Yritystiedot</strong></p>
+        <strong>Yritystiedot</strong>
         <p>Lisää tähän yrityksesi nimi / Y-tunnus tarvittaessa.</p>
       </div>
     </div>
   </footer>
+
 </body>
 </html>
